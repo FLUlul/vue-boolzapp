@@ -24,11 +24,11 @@
                 <div class="header-avatar-name">
                     <div class="user-avatar">
                     
-                        <img src="img/avatar_1.jpg" alt="">
+                        <img src="img/avatar_io.jpg" alt="Flu">
     
                     </div>
     
-                    <h3>Nome Utente</h3>
+                    <h3>Flu</h3>
                 </div>
 
                 <div class="icons">
@@ -67,15 +67,15 @@
             <!-- v-for contact in contacts -->
             <section id="contacts">
 
-                <div class="contact clearfix active">
+                <div class="contact clearfix" v-for="contact, i in contacts" :key="i">
 
                     <div class="user-avatar">
-                        <img src="img/avatar_1.jpg" alt="">
+                        <img :src=" 'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
                     </div>
 
                     <div class="user-name-last-msg">
 
-                        <h3>Nome</h3>
+                        <h3>{{contact.name}}</h3>
 
                         <span>Last Message...</span>
 
