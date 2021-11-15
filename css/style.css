@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.clearfix{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#background-top{
+    background-color: #029588;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    height: 150px;
+    width: 100%;
+}
+#background-bot{
+    background-color: #dddbd1;
+    position: absolute;
+    top: 150px;
+    z-index: -1;
+    height: calc(100vh - 150px);
+    width: 100%;
+}
+
+#container{
+    width: 90%;
+    margin: 20px auto;
+    height: calc(100vh - 40px);
+    display: flex;
+    /* debug */
+    /* border: solid red 5px; */
+    
+}
+
+#aside-lft{
+    width: 30%;
+    height: 100%;
+    /* debug */
+    background-color: #eaeaea;
+}
+
+#aside-rgt{
+    height: 100%;
+    width: 70%;
+    /* debug */
+    background-color: palegreen;
+}
+
+.top-bar{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    background-color: #eaeaea;
+    border-right:solid 1px #b1b1b1;
+}
+
+/* HEADER TOP LEFT SECTION */
+.header-avatar-name{
+    display: flex;
+    align-items: center;
+}
+
+.header-avatar-name .user-avatar{
+    width: 60px;
+}
+
+.header-avatar-name h3{
+    margin: 0 10px;
+}
+
+.icons i{
+    color: #b1b1b1;
+    font-size: 1.5rem;
+    margin: 0 7px;
+    cursor: pointer;
+}
+/* NEW MSG SECTION */
+.banner-new-msg{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: #8edafc;
+}
+.bell-icon{
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    background-color: white;
+    color: #8edafc;
+    text-align: center;
+    line-height: 70px;
+    font-size: 1.5rem;
+}
+.banner-new-msg-text{
+    margin: 0 10px;
+}
+.banner-new-msg-text span{
+    color: grey;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* SEARCH TAB SECTION */
+.search-panel{
+    padding: 0.5rem;
+    display: flex;
+    background-color: #eaeaea;
+}
+.search-panel div{
+    width: 10%;
+    height: 30px;
+    background-color: white;
+    text-align: center;
+    line-height: 30px;
+}
+.search-panel input {
+    width: 90%;
+    height: 30px;
+    border: none;
+}
+
+/* CONTACTS SECTION */
+#contacts{
+    height: calc(100vh - 265px);
+    overflow-y: auto;
+}
+.contact{
+    /* display: flex; */
+    border-top: solid #dfdfdf 1px;
+    padding: 0.5rem 0.7rem;
+    width: 100%;
+}
+
+.user-avatar img{
+    max-width: 100%;
+    border-radius: 50%;
+}
+.user-avatar{
+    float: left;
+    width: 80px;
+}
+
+.user-name-last-msg{
+    float: left;
+    padding: 0.5rem 1rem;
+}
+.user-name-last-msg span{
+    color: #b1b1b1;
+}
+
+.contact .date{
+    float: right;
+    color: #b1b1b1;
+}
+
+.contact:hover{
+    background-color: #dfdfdf;
+}
