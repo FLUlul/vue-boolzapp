@@ -65,7 +65,8 @@ body{
 }
 
 .top-bar .user-avatar{
-    width: 60px;
+    min-width: 60px;
+    max-width: 60px;
 }
 
 #aside-lft .header-avatar-name h3{
@@ -130,23 +131,26 @@ body{
     overflow-y: auto;
 }
 .contact{
-    /* display: flex; */
+    display: flex;
+    justify-content: space-between;
     border-top: solid #dfdfdf 1px;
     padding: 0.5rem 0.7rem;
     width: 100%;
+    cursor: pointer;
 }
-
+.avatar-name-container{
+    display: flex;
+}
 .user-avatar img{
     max-width: 100%;
     border-radius: 50%;
 }
 .user-avatar{
-    float: left;
-    width: 80px;
+    min-width: 80px;
+    max-width: 80px;
 }
 
 .user-name-last-msg{
-    float: left;
     padding: 0.5rem 1rem;
 }
 .user-name-last-msg span{
@@ -154,8 +158,9 @@ body{
 }
 
 .contact .date{
-    float: right;
     color: #b1b1b1;
+    padding: 0.5rem 1rem;
+    min-width: 203px;
 }
 
 .contact.active{
@@ -177,11 +182,16 @@ body{
     height: calc(100% - 160px);
     width: 100%;
     background-image:url(../img/pattern.jpg);
-    background-size: 500px;
-    display: flex;
-    flex-direction: column;
+    background-size: 550px;
+    background-position: right;
+
     padding: 1.5rem;
     overflow-y: auto;
+}
+
+.message-container{
+    display: flex;
+    flex-direction: column;
 }
 
 .message{
@@ -204,7 +214,7 @@ body{
     align-self: flex-end;
 }
 
-.message.recived{
+.message.received{
     background-color: #ffffff;
     align-self: flex-start;
 }
@@ -213,6 +223,7 @@ body{
     color: #b1b1b1;
     font-size: 0.8rem;
     align-self: flex-end;
+    margin-top: 0.3rem;
 }
 
 /* FOOTER CHAT TYPE SECTION */
@@ -235,6 +246,7 @@ body{
     width: 100%;
     border-radius: 10px;
     border: none;
+    padding-left: 10px;
 }
 .audio{
     text-align: center;
