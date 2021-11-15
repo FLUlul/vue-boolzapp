@@ -45,8 +45,7 @@ var app = new Vue (
                             date:   '20/03/2020   16:30:55', 
                             text:   'Bene   grazie!   Stasera   ci    vediamo?', 
                             status:   'received' 
-                        }, 
-                            
+                        },   
                         { 
                             date:   '20/03/2020   16:35:00', 
                             text:   'Mi     piacerebbe   ma    devo   andare   a   fare   la    spesa.', 
@@ -69,9 +68,10 @@ var app = new Vue (
                             text:   'Sicuro   di    non     aver   sbagliato   chat?', 
                             status:   'sent' 
                         }, 
-                        { date:   '28/03/2020   16:15:22', 
-                        text:   'Ah     scusa!', 
-                        status:   'received' 
+                        { 
+                            date:   '28/03/2020   16:15:22', 
+                            text:   'Ah     scusa!', 
+                            status:   'received' 
                         } 
                     ], 
                 }, 

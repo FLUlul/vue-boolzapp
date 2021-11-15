@@ -64,9 +64,10 @@
 
             </section>
 
+            <!-- v-for contact in contacts -->
             <section id="contacts">
 
-                <div class="contact clearfix">
+                <div class="contact clearfix active">
 
                     <div class="user-avatar">
                         <img src="img/avatar_1.jpg" alt="">
@@ -94,7 +95,67 @@
 
             <header class="top-bar">
 
+                <div class="header-avatar-name">
+                    <div class="user-avatar">
+                    
+                        <img src="img/avatar_1.jpg" alt="">
+    
+                    </div>
+    
+                    <div class="user-name-access-chat">
+                        <h3>Nome</h3>
+                        <span>Ultimo accesso oggi alle </span>
+                        <span>15/11/2021 10:20:17</span>
+                    </div>
+                    
+                </div>
+
+                <div class="icons">
+
+                    <i class="fas fa-search"></i>
+
+                    <i class="fas fa-paperclip"></i>
+
+                    <i class="fas fa-ellipsis-v"></i>
+
+                </div>
+
             </header>
+
+            <main id="messages">
+
+                <div class="message sent">
+                    <div>Hai fatto questo?</div>
+                    <span>15/11/2021 10:18:20</span>
+                </div>
+
+                <div class="message sent">
+                    <div>e questo?</div>
+                    <span>15/11/2021 10:19:00</span>
+                </div>
+
+                <div class="message recived">
+                    <div>Si l'ho fatto!!!</div>
+                    <span>15/11/2021 10:20:20</span>
+                </div>
+
+            </main>
+
+            <footer id="chat-type">
+
+                <div class="emotes icons">
+                    <i class="far fa-smile"></i>
+                </div>
+
+                <div class="chat-input">
+                    <input type="text" placeholder="Scrivi un messaggio">
+                </div>
+
+                <div class="audio icons">
+                    <i class="fas fa-microphone"></i>
+                </div>
+
+            </footer>
 
         </aside>
 

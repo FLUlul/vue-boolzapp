@@ -34,24 +34,18 @@ body{
     width: 90%;
     margin: 20px auto;
     height: calc(100vh - 40px);
-    display: flex;
-    /* debug */
-    /* border: solid red 5px; */
-    
+    display: flex;    
 }
 
 #aside-lft{
     width: 30%;
     height: 100%;
-    /* debug */
     background-color: #eaeaea;
 }
 
 #aside-rgt{
     height: 100%;
     width: 70%;
-    /* debug */
-    background-color: palegreen;
 }
 
 .top-bar{
@@ -70,11 +64,11 @@ body{
     align-items: center;
 }
 
-.header-avatar-name .user-avatar{
+.top-bar .user-avatar{
     width: 60px;
 }
 
-.header-avatar-name h3{
+#aside-lft .header-avatar-name h3{
     margin: 0 10px;
 }
 
@@ -132,7 +126,7 @@ body{
 
 /* CONTACTS SECTION */
 #contacts{
-    height: calc(100vh - 265px);
+    height: calc(100% - 265px);
     overflow-y: auto;
 }
 .contact{
@@ -164,6 +158,84 @@ body{
     color: #b1b1b1;
 }
 
-.contact:hover{
+.contact.active{
     background-color: #dfdfdf;
+}
+
+
+/* HEADER TOP RIGHT SECTION */
+.user-name-access-chat{
+    margin-left: 10px;
+}
+.user-name-access-chat span{
+    color: #b1b1b1;
+    font-size: 0.9rem;
+}
+
+/* MESSAGES SECTION */
+#messages{
+    height: calc(100% - 160px);
+    width: 100%;
+    background-image:url(../img/pattern.jpg);
+    background-size: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.message{
+    min-width: 250px;
+    max-width: 500px;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    margin: 5px 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.message.sent{
+    background-color: #dcf7c0;
+    align-self: flex-end;
+}
+
+.message.recived{
+    background-color: #ffffff;
+    align-self: flex-start;
+}
+
+.message span{
+    color: #b1b1b1;
+    font-size: 0.8rem;
+    align-self: flex-end;
+}
+
+/* FOOTER CHAT TYPE SECTION */
+#chat-type{
+    height: 80px;
+    background-color: #f2eeea;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.emotes{
+    width: 5%;
+    text-align: center;
+}
+.chat-input{
+    width: 90%;
+}
+.chat-input input{
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+}
+.audio{
+    text-align: center;
+    width: 5%;
 }
