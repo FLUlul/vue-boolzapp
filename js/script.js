@@ -1,22 +1,22 @@
 /* 
 Milestone 1
-● Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse.
-● Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto.
+OK● Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse.
+OK● Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto.
 
 Milestone2
-● Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione 
-● Click sul contatto mostra la conversazione del contatto cliccato
+OK● Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione 
+OK● Click sul contatto mostra la conversazione del contatto cliccato
 
 Milestone3
-● Aggiunta di un messaggio : l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde 
-● Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+OK● Aggiunta di un messaggio : l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde 
+OK● Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
 
 Milestone4
-● Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+OK● Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
 
 Milestone5-opzionale
 ● Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato 
-● Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti 
+OK● Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti 
 
 */
 
@@ -132,7 +132,7 @@ var app = new Vue (
 
                         date:   '10/01/2020   15:30:55', 
                         text:   "ok", 
-                        status:   'received'
+                        status: 'received'
     
                     }
                     this.contacts[this.activeContact].messages.push(newMsg);
