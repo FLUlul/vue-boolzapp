@@ -209,6 +209,7 @@ body{
 
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .message.sent{
@@ -226,6 +227,36 @@ body{
     font-size: 0.8rem;
     align-self: flex-end;
     margin-top: 0.3rem;
+}
+.arrow{
+    display: none;
+}
+.message:hover .arrow{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.info-text{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 20px;
+    background-color: white;
+    box-shadow: 1px 1px 5px black;
+    list-style: none;
+    padding: 10px;
+}
+
+.info-text li{
+    cursor: pointer;
+}
+
+.d-block{
+    display: block;
 }
 
 /* FOOTER CHAT TYPE SECTION */

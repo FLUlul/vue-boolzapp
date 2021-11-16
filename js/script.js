@@ -27,6 +27,8 @@ var app = new Vue (
             activeContact: 0,
             newMessage: "",
             searchedValue: "",
+            dispBlock: false,
+            dateNow: "",
             contacts: [
                 { 
                     name:   'Michele',
@@ -113,6 +115,9 @@ var app = new Vue (
                 }, 
             ] 
         },
+        created() {
+            this.getNow();
+        },
         methods: {
             pushNewMessage(){
                 let newMsg = {
@@ -138,7 +143,20 @@ var app = new Vue (
                     this.contacts[this.activeContact].messages.push(newMsg);
                 }, 1000);
             },
-
+            displayBlockNone(){
+                if (this.dispBlock === true) {
+                    this.dispBlock = false
+                } else {
+                    this.dispBlock = true
+                }
+            },
+            getNow() {
+                const today = new Date();
+                const date = today.getDate() +'/'+(today.getMonth()+1)+'/'+ today.getFullYear();
+                const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                const dateTime = date +' '+ time;
+                this.dateNow = dateTime;
+            }
         }
     }
 )

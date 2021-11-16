@@ -107,7 +107,7 @@
                     <div class="user-name-access-chat">
                         <h3>{{contact.name}}</h3>
                         <span>Ultimo accesso oggi alle </span>
-                        <span>15/11/2021 10:20:17</span>
+                        <span>{{dateNow}}</span>
                     </div>
                     
                 </div>
@@ -130,6 +130,13 @@
                     <div class="message" v-for="message, j in contact.messages" :key="j" :class="message.status == 'sent' ? 'sent' : 'received'" v-if="activeContact === i">
                         <div>{{message.text}}</div>
                         <span>{{message.date}}</span>
+                        <span class="arrow" @click="displayBlockNone">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                        <ul class="info-text" :class="dispBlock === true ? 'd-block' : ''">
+                            <li>Info</li>
+                            <li>Cancella messaggio</li>
+                        </ul>
                     </div>
                 </div>
 
