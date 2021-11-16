@@ -67,7 +67,7 @@
             <!-- v-for contact in contacts -->
             <section id="contacts">
 
-                <div class="contact clearfix" v-for="contact, i in contacts" :key="i" @click="activeContact = i, getClickedContact(i)" :class="activeContact === i ? 'active' : ''">
+                <div class="contact clearfix" v-for="contact, i in contacts" :key="i" @click="activeContact = i" :class="activeContact === i ? 'active' : ''">
 
                     <div class="avatar-name-container">
                         <div class="user-avatar">
@@ -96,7 +96,7 @@
 
             <header class="top-bar">
 
-                <div class="header-avatar-name" v-for="contact in contacts" v-if="contact.visible === true">
+                <div class="header-avatar-name" v-for="contact,i in contacts" v-if="activeContact === i">
 
                     <div class="user-avatar">
                     
@@ -127,7 +127,7 @@
             <main id="messages">
 
                 <div class="message-container" v-for="contact, i in contacts">
-                    <div class="message" v-for="message, i in contact.messages" :key="i" :class="message.status == 'sent' ? 'sent' : 'received'" v-if="contact.visible === true">
+                    <div class="message" v-for="message, i in contact.messages" :key="i" :class="message.status == 'sent' ? 'sent' : 'received'" v-if="activeContact === i">
                         <div>{{message.text}}</div>
                         <span>{{message.date}}</span>
                     </div>

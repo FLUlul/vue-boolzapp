@@ -9,11 +9,12 @@ var app = new Vue (
         el: "#container",
         data: {
             activeContact: 0,
+            newMessage: "",
             contacts: [
                 { 
                     name:   'Michele',
                     avatar:   '_1',
-                    visible:   false,
+                    visible:   true,
                     messages: [
                             {
                                 date:   '10/01/2020   15:30:55',
@@ -35,7 +36,7 @@ var app = new Vue (
                 {
                     name:   'Fabio',
                     avatar:   '_2',
-                    visible:   false,
+                    visible:   true,
                     messages:   [ 
                         { 
                             date:   '20/03/2020   16:30:00',
@@ -57,7 +58,7 @@ var app = new Vue (
                 { 
                     name:   'Samuele', 
                     avatar:   '_3', 
-                    visible:   false, 
+                    visible:   true, 
                     messages:   [ 
                         { 
                             date:   '28/03/2020   10:10:40', 
@@ -79,7 +80,7 @@ var app = new Vue (
                 { 
                     name:   'Luisa', 
                     avatar:   '_4', 
-                    visible:   false, 
+                    visible:   true, 
                     messages:   [ 
                         { 
                             date:   '10/01/2020   15:30:55', 
@@ -96,13 +97,16 @@ var app = new Vue (
             ] 
         },
         methods: {
-            getClickedContact(activeElement){
-                if (this.contacts[activeElement].visible === false) {
-                    this.contacts[activeElement].visible = true
-                }else{
-                    this.contacts[activeElement].visible = false
-                }; 
-            }
+/*             getNewMessage(){
+                let newMsg = {
+
+                    date:   '10/01/2020   15:30:55', 
+                    text:   newMessage, 
+                    status:   'sent'
+
+                }
+                this.contacts[0].messages.push(newMsg);
+            } v-model="newMessage" @keydown.enter="getNewMessage()"*/
         }
     }
 )
