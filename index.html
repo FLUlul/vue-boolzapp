@@ -60,14 +60,14 @@
 
                 <div><i class="fas fa-search"></i></div>
 
-                <input type="text" placeholder="Cerca o inizia una nuova chat">
+                <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchedValue">
 
             </section>
 
             <!-- v-for contact in contacts -->
             <section id="contacts">
 
-                <div class="contact clearfix" v-for="contact, i in contacts" :key="i" @click="activeContact = i" :class="activeContact === i ? 'active' : ''">
+                <div class="contact clearfix" v-for="contact, i in contacts" :key="i" @click="activeContact = i" :class="activeContact === i ? 'active' : ''" v-if="contact.name.includes(searchedValue)">
 
                     <div class="avatar-name-container">
                         <div class="user-avatar">
@@ -127,7 +127,7 @@
             <main id="messages">
 
                 <div class="message-container" v-for="contact, i in contacts">
-                    <div class="message" v-for="message, i in contact.messages" :key="i" :class="message.status == 'sent' ? 'sent' : 'received'" v-if="activeContact === i">
+                    <div class="message" v-for="message, j in contact.messages" :key="j" :class="message.status == 'sent' ? 'sent' : 'received'" v-if="activeContact === i">
                         <div>{{message.text}}</div>
                         <span>{{message.date}}</span>
                     </div>
@@ -142,7 +142,7 @@
                 </div>
 
                 <div class="chat-input">
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keydown.enter="pushNewMessage(), sendAnswer()">
                 </div>
 
                 <div class="audio icons">
@@ -154,7 +154,10 @@
         </aside>
 
     </div>
-
+<!--     <script src="path/to/dayjs/dayjs.min.js"></script>
+    <script>
+        dayjs().format()
+    </script> -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="js/script.js"></script>
 </body>
