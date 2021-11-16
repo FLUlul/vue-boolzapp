@@ -137,7 +137,8 @@ var app = new Vue (
                     }
                     this.contacts[this.activeContact].messages.push(newMsg);
                 }, 1000);
-            }
+            },
+
         }
     }
 )

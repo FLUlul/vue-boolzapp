@@ -67,7 +67,7 @@
             <!-- v-for contact in contacts -->
             <section id="contacts">
 
-                <div class="contact clearfix" v-for="contact, i in contacts" :key="i" @click="activeContact = i" :class="activeContact === i ? 'active' : ''" v-if="contact.name.includes(searchedValue)">
+                <div class="contact clearfix" v-for="contact, i in contacts" :key="i" @click="activeContact = i" :class="activeContact === i ? 'active' : ''" v-if="contact.name.toLowerCase().includes(searchedValue.toLowerCase())">
 
                     <div class="avatar-name-container">
                         <div class="user-avatar">
