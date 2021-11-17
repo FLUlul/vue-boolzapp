@@ -244,6 +244,7 @@ body{
     box-shadow: 1px 1px 5px black;
     list-style: none;
     padding: 10px;
+    z-index: 5;
 }
 
 .info-text li{
