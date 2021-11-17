@@ -187,11 +187,6 @@ body{
 
     padding: 1.5rem;
     overflow-y: auto;
-/*     display: flex;
-    flex-direction: column; */
-}
-
-.message-container{
     display: flex;
     flex-direction: column;
 }
