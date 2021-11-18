@@ -115,12 +115,6 @@ var app = new Vue (
                 }, 
             ] 
         },
-/*         computed: {
-            dateNow(){ 
-                nowDate = dayjs();
-                return nowDate
-            },
-        }, */
         methods: {
             pushNewMessage(){
                 /* creo questa variabile per evitare il bug di far scrivere la risposta su un'altra chat se cambio velocemente contatto */
@@ -160,13 +154,6 @@ var app = new Vue (
                 this.contacts[this.activeContact].messages.splice(index, 1);
                 this.dispBlock = false;
             },
-/*             getNow() {
-                const today = new Date();
-                const date = today.getDate() +'/'+(today.getMonth()+1)+'/'+ today.getFullYear();
-                const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-                const dateTime = date +' '+ time;
-                this.dateNow = dateTime;
-            } */
         }
     }
 )

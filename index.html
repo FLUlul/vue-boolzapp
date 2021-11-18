@@ -9,18 +9,21 @@
     <title>Boolzapp</title>
 </head>
 <body>
+    <!-- background -->
     <div id="background-top">
 
     </div>
     <div id="background-bot">
         
     </div>
+    <!-- container app for vue -->
     <div id="container">
 
+        <!-- left side -->
         <aside id="aside-lft">
-
+            <!-- header section -->
             <header class="top-bar">
-
+                <!-- my avatar -->
                 <div class="header-avatar-name">
                     <div class="user-avatar">
                     
@@ -30,7 +33,7 @@
     
                     <h3>Flu</h3>
                 </div>
-
+                <!-- icons -->
                 <div class="icons">
 
                     <i class="fas fa-circle-notch"></i>
@@ -43,6 +46,7 @@
 
             </header>
 
+            <!-- notification for new message desktop section -->
             <section class="banner-new-msg">
 
                 <div class="bell-icon">
@@ -56,17 +60,20 @@
 
             </section>
 
+            <!-- search contact panel section-->
             <section class="search-panel">
 
                 <div><i class="fas fa-search"></i></div>
 
+                <!-- here we have a v-model that will be comparised -->
                 <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchedValue">
 
             </section>
 
-            <!-- v-for contact in contacts -->
+            <!-- contacts section -->
             <section id="contacts">
 
+                <!-- v-for contact in contacts to print every contact we have in data, we see if contact.name contains any of the char we input in the v-model above and we set the comparison all in lowercase so it will be the same word even if we have it in data with the first letter in Upper. We even add a class active when the variable is same as i. At click we set the variable same as i -->
                 <div class="contact" v-for="contact, i in contacts" :key="i" @click="activeContact = i" :class="activeContact === i ? 'active' : ''" v-if="contact.name.toLowerCase().includes(searchedValue.toLowerCase())">
 
                     <div class="avatar-name-container">
@@ -76,12 +83,12 @@
                         <div class="user-name-last-msg">
 
                             <h3>{{contact.name}}</h3>
-    
+                            <!-- here we take the last message.text in messages array and we slice it from char in position 0 to max char in position 10 -->
                             <span>{{contact.messages[contact.messages.length - 1].text.slice(0,10)}}...</span>
     
                         </div>
                     </div>
-
+                    <!-- here we take the last message.date in the messages array -->
                     <div class="date">
                         <span>{{contact.messages[contact.messages.length - 1].date}}</span>
                     </div>
@@ -92,21 +99,25 @@
 
         </aside>
 
+        <!-- right side -->
         <aside id="aside-rgt">
 
+            <!-- header right section -->
             <header class="top-bar">
 
                 <div class="header-avatar-name">
 
                     <div class="user-avatar">
-                    
+                        <!-- here we take the activeContact avatar -->
                         <img :src="'img/avatar' + contacts[activeContact].avatar +'.jpg'" alt="contact.name">
                         
                     </div>
     
                     <div class="user-name-access-chat">
+                        <!-- here we take the activeContact name -->
                         <h3>{{contacts[activeContact].name}}</h3>
                         <span>Ultimo accesso oggi alle </span>
+                        <!-- here we take the date in the last messagge in messages array without a v-for -->
                         <span>
                             {{contacts[activeContact].messages[contacts[activeContact].messages.length - 1].date}}
 
@@ -127,22 +138,35 @@
 
             </header>
 
+            <!-- message section -->
             <main id="messages">
 
-                    <div class="message" v-for="message, i in contacts[activeContact].messages" :key="i" :class="message.status == 'sent' ? 'sent' : 'received'" >
-                        <div>{{message.text}}</div>
-                        <span>{{message.date}}</span>
-                        <span class="arrow" @click="displayBlockNone(), activeMessage = i">
-                            <i class="fas fa-chevron-down"></i>
-                        </span>
-                        <ul class="info-text" :class="dispBlock === true ? 'd-block' : ''" v-if="activeMessage === i">
-                            <li>Info</li>
-                            <li @click="deleteMessage(i)">Cancella messaggio</li>
-                        </ul>
-                    </div>
+                <!-- here we do a v-for to get the messages in the activeContact.messages and we set a condition that add a class sent only if the status of the specific message is = "sent" else it set the class received -->
+                <div class="message" v-for="message, i in contacts[activeContact].messages" :key="i" :class="message.status == 'sent' ? 'sent' : 'received'" >
+
+                    <!-- we take the message text -->
+                    <div>{{message.text}}</div>
+
+                    <!-- we take the message date -->
+                    <span>{{message.date}}</span>
+
+                    <!-- here we created the arrow that on click it will show, changing the variable dispBlock to true, or false if it's already true and we set the activeMessage variable same as i-->
+                    <span class="arrow" @click="displayBlockNone(), activeMessage = i">
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+
+                    <!-- here we set the class d-block only if dispBlock is = true, we see it only if the activeMessage variable is same as i yo see it in the specific message -->
+                    <ul class="info-text" :class="dispBlock === true ? 'd-block' : ''" v-if="activeMessage === i">
+                        <li>Info</li>
+
+                        <!-- at click it delete the message -->
+                        <li @click="deleteMessage(i)">Cancella messaggio</li>
+                    </ul>
+                </div>
 
             </main>
 
+            <!-- input in footer -->
             <footer id="chat-type">
 
                 <div class="emotes icons">
@@ -150,7 +174,10 @@
                 </div>
 
                 <div class="chat-input">
+
+                    <!-- here we have a v-model and at keydown.enter will do the function of pushing the new object in the data messages of the specific contact -->
                     <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keydown.enter="pushNewMessage()">
+
                 </div>
 
                 <div class="audio icons">
