@@ -123,27 +123,30 @@ var app = new Vue (
         }, */
         methods: {
             pushNewMessage(){
+                /* creo questa variabile per evitare il bug di far scrivere la risposta su un'altra chat se cambio velocemente contatto */
+                let target = this.contacts[this.activeContact].messages
+
                 let newMsg = {
 
-                    date:   '10/01/2020   15:30:55', 
+                    date:   dayjs().format('DD/MM/YYYY   hh:mm:ss'), 
                     text:   this.newMessage, 
                     status:   'sent'
 
                 }
         
-                this.contacts[this.activeContact].messages.push(newMsg);
-                this.newMessage = "";
-            },
-            sendAnswer(){
-                setTimeout(() => {
-                    let newMsg = {
+                target.push(newMsg);
 
-                        date:   '10/01/2020   15:30:55', 
+                this.newMessage = "";
+
+                setTimeout(() => {
+                    let newMsgAnsw = {
+
+                        date:   dayjs().format('DD/MM/YYYY   hh:mm:ss'), 
                         text:   "ok", 
                         status: 'received'
     
                     }
-                    this.contacts[this.activeContact].messages.push(newMsg);
+                    target.push(newMsgAnsw);
                 }, 1000);
             },
             displayBlockNone(){
@@ -153,7 +156,7 @@ var app = new Vue (
                     this.dispBlock = true
                 }
             },
-            deleteTask(index){
+            deleteMessage(index){
                 this.contacts[this.activeContact].messages.splice(index, 1);
                 this.dispBlock = false;
             },
