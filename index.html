@@ -83,12 +83,12 @@
                         <div class="user-name-last-msg">
 
                             <h3>{{contact.name}}</h3>
-                            <!-- here we take the last message.text in messages array and we slice it from char in position 0 to max char in position 10 -->
+                            <!-- here we take the last message.text in messages array and we slice it from char in position 0 to max char in position 10, added the v-if check so if there is no more messages it will not bug -->
                             <span v-if="contact.messages.length > 0">{{contact.messages[contact.messages.length - 1].text.slice(0,10)}}...</span>
     
                         </div>
                     </div>
-                    <!-- here we take the last message.date in the messages array -->
+                    <!-- here we take the last message.date in the messages array, added the v-if for the deleting message -->
                     <div class="date" v-if="contact.messages.length > 0">
                         <span>{{contact.messages[contact.messages.length - 1].date}}</span>
                     </div>
@@ -117,7 +117,7 @@
                         <!-- here we take the activeContact name -->
                         <h3>{{contacts[activeContact].name}}</h3>
                         <span>Ultimo accesso oggi alle </span>
-                        <!-- here we take the date in the last messagge in messages array without a v-for -->
+                        <!-- here we take the date in the last messagge in messages array without a v-for, adding the same v-if for the deleting message -->
                         <span v-if="contacts[activeContact].messages.length > 0">
                             {{contacts[activeContact].messages[contacts[activeContact].messages.length - 1].date}}
 
