@@ -136,7 +136,7 @@ var app = new Vue (
                     let newMsgAnsw = {
 
                         date:   dayjs().format('DD/MM/YYYY   hh:mm:ss'), 
-                        text:   "ok", 
+                        text:   "ok",
                         status: 'received'
     
                     }
